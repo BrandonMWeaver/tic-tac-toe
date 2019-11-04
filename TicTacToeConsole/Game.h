@@ -8,6 +8,9 @@ public:
 	Game();
 	// Constructor->Game: Initializes each element of the dynamic array '_board' with a single whitespace character.
 
+	~Game();
+	// Destructor->Game: Free memory used by '_board'.
+
 	void Play();
 	// Play: A single game loop.
 

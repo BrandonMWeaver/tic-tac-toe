@@ -5,6 +5,11 @@ Game::Game()
 	this->_board = new char[9] { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
 }
 
+Game::~Game()
+{
+	delete[] this->_board;
+}
+
 void Game::Play()
 {
 	do
