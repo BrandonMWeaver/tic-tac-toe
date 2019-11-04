@@ -12,13 +12,19 @@ Game::~Game()
 
 void Game::Play()
 {
+	char token = 'O';
 	do
 	{
-		std::cout << *this << "\nEnter 1-9: ";
+		std::cout << *this << "Enter 1-9: ";
 		int index = this->InputToIndex();
 		if (this->IsValidMove(index))
-			this->Move(index, this->Token());
+		{
+			token = this->Token();
+			this->Move(index, token);
+		}
 	} while (!this->IsGameOver());
+	std::cout << *this;
+	this->CongratulateWinner(token);
 }
 
 int Game::InputToIndex()
@@ -71,6 +77,11 @@ bool Game::IsGameOver()
 			return true;
 	}
 	return false;
+}
+
+void Game::CongratulateWinner(char token)
+{
+	std::cout << "Congratulations " << token << ". You win.";
 }
 
 std::ostream& operator << (std::ostream& out, Game& game)

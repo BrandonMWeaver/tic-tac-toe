@@ -47,6 +47,9 @@ private:
 	bool IsGameOver();
 	// IsGameOver: Returns true if the game is over.
 
+	void CongratulateWinner(char);
+	// CongratulateWinner: Congratulates the winner.
+
 	friend std::ostream& operator << (std::ostream&, Game&);
 	// Operator-><<: Displays the '_board' in an aesthetic manner.
 };
